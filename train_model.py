@@ -130,7 +130,8 @@ accuracy = correct / total
 print(f"Acurácia: {accuracy * 100:.2f}%")
 
 # Classe mais comum (baseline)
-print("Distribuição de classes no teste:", Counter(y_test))
+dist = Counter(map(int, y_test))
+print("Distribuição de classes no teste:", dist)
 
 # Matriz de confusão
 print("Matriz de Confusão:")
