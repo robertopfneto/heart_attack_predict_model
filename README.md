@@ -1,7 +1,10 @@
 ### Setup
 
-```conda create -n heart python==3.9 ```
-```pip install numpy pandas seaborn scikit-learn ```
+Conda enviroment (if you no use conda, don't need this step): 
+```conda create -n heart python==3.9```
+
+Python installations
+``` pip install numpy pandas seaborn scikit-learn ```
 
 
 
