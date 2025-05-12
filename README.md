@@ -16,6 +16,9 @@ The data comes from `heart.csv` and includes 13 medical features like age, blood
 
 - `output`: 1 = risk of heart disease, 0 = no risk
 
+acess: https://www.kaggle.com/datasets/johnsmith88/heart-disease-dataset
+obs - the last column named "target" on original database was exchanged for "output"
+
 ## 🚀 How to Run
 
 1. Make sure `heart.csv` is in the same folder.
