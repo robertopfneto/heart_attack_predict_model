@@ -44,8 +44,7 @@ class NeuralNetworkFromScratch:
     # Função de ativação
     def activation(self, x):
         # sigmoid: https://www.delftstack.com/pt/howto/python/sigmoid-function-python/
-        e = np.exp(-x)
-        return 1 + (1 + e)
+        return 1 / (1 + np.exp(-x))
     
     def d_activation(self, x):
         # derivate of sigmoid: https://builtin-com.translate.goog/articles/derivative-of-sigmoid-function?_x_tr_sl=en&_x_tr_tl=pt&_x_tr_hl=pt&_x_tr_pto=wa
@@ -96,7 +95,7 @@ class NeuralNetworkFromScratch:
             self.loss_train.append(loss) #adiciono a lista de erros de treino
 
             # calculando os gradientes
-            dL_db, dL_dw = self.backward(self, X_train[random_position], y_train[random_position])
+            dL_db, dL_dw = self.backward(X_train[random_position], y_train[random_position])
 
             # atualizo os pesos
             self.optimizer(dL_db,dL_dw)
@@ -114,3 +113,12 @@ class NeuralNetworkFromScratch:
         
 
 # Definindo hyperparametros
+learning_rate = 0.1
+ITERATIONS = 1000
+
+# Instanciando modelo e treinando
+nn = NeuralNetworkFromScratch(learning_rate=learning_rate, X_train=X_train_scale, y_train=y_train, X_test=X_test_scale, y_test=y_test)
+print(nn.train(ITERATIONS=ITERATIONS))
+
+print("Última loss de treino:", nn.loss_train[-1])
+print("Última loss de teste:", nn.loss_test[-1])
