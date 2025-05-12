@@ -102,8 +102,6 @@ nn = NeuralNetworkFromScratch(
 )
 
 print(nn.train(ITERATIONS=ITERATIONS))
-print("Última loss de treino:", nn.loss_train[-1])
-print("Última loss de teste:", nn.loss_test[-1])
 
 # Gráfico de evolução da loss de teste
 sns.lineplot(x=list(range(len(nn.loss_test))), y=nn.loss_test)
